@@ -5,7 +5,7 @@ Using this container will allow you to quickly and easily use the python geoip2 
 
 At this time, only python3.8 is supported, although it should be possible to support any version of python that apache beam supports via a quick tweak to the Dockerfile to swap out which apache beam container image this is based on.
 
-Image can be referenced [here](https://hub.docker.com/repository/docker/monudj/monubeam).
+Image can be referenced [here](https://hub.docker.com/repository/docker/monudj/geoipbeam).
 
 ## Usage Instructions ##
 

@@ -1,4 +1,6 @@
-FROM apache/beam_python3.8_sdk:2.33.0
+ARG BEAM_PYTHON
+
+FROM apache/${BEAM_PYTHON:?Build argument needs to be set and not null. Use this form: --build-arg BEAM_PYTHON='<PYTHON-BEAM-VERSION>:VERSION'}
 
 # Pass maxmind token as arg so we can commit this to version control
 ARG MAXMIND_TOKEN

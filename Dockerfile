@@ -1,4 +1,4 @@
-ARG BEAM_PYTHON
+ARG BEAM_PYTHON=apache/beam_python3.8_sdk
 
 FROM apache/${BEAM_PYTHON:?Build argument needs to be set and not null. Use this form: --build-arg BEAM_PYTHON='<PYTHON-BEAM-VERSION>:VERSION'}
 

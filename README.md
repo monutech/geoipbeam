@@ -66,3 +66,12 @@ Followed by this to publish it:
 ```
 docker push <YOUR_REGISTRY_USERNAME>/geoipbeam:<TAG>
 ```
+
+## Atribution ##
+
+This image contains GeoLite2 data created by Maxmind. In accordance with their End User License Agreement, you must include an attribution line similar to this on any product that you build using this container:
+```
+This product includes GeoLite2 data created by MaxMind, available from
+<a href="https://www.maxmind.com">https://www.maxmind.com</a>.
+```
+Please see their [license page](https://www.maxmind.com/en/geolite2/eula) for more information.

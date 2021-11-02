@@ -11,6 +11,10 @@ on:
 jobs:
 
   build:
+    strategy:
+      fail-fast: false
+      matrix:
+        python_version: [3.5, 3.6, 3.7, 3.8]
 
     runs-on: ubuntu-latest
 
@@ -23,6 +27,6 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/geoipbeam:python3.8_sdk_$(date +%s) -t ${{secrets.DOCKER_USER}}/geoipbeam:python3.8_sdk --build-arg MAXMIND_TOKEN="${{secrets.MAXMIND_TOKEN}}"
+      run: docker build . --file Dockerfile -t ${{secrets.DOCKER_USER}}/geoipbeam:python${{ matrix.python_version }}_sdk_$(date +%s) -t ${{secrets.DOCKER_USER}}/geoipbeam:python${{ matrix.python_version }}_sdk --build-arg MAXMIND_TOKEN="${{secrets.MAXMIND_TOKEN}}"
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USER}}/geoipbeam --all-tags

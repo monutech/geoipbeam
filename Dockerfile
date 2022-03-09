@@ -4,6 +4,7 @@ FROM $BEAM_PYTHON
 
 # Pass maxmind token as arg so we can commit this to version control
 ARG MAXMIND_TOKEN
+
 # Friendly message to help people not forget the arg.
 RUN ["/bin/bash", "-c", ": ${MAXMIND_TOKEN:?Build argument needs to be set and not null. Use this form: --build-arg MAXMIND_TOKEN='<TOKEN>'}"]
 

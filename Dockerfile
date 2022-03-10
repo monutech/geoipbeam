@@ -14,6 +14,9 @@ RUN pip install --no-cache-dir geoip2==4.4.0
 # Install polars since it's not preinstalled in apache beam
 RUN pip install --no-cache-dir polars
 
+# Manually install version 7 of pyarrow. (Not technically supported by apache-beam yet, but it works ok and is needed for the dataflow job.)
+RUN pip install --no-cache-dir pyarrow==7.0.0
+
 # Download and unpack latest maxmind City, ASN, and Country databases
 RUN for i in City ASN Country; do wget -qO- https://download.maxmind.com/app/geoip_download\?edition_id\=GeoLite2-${i}\&license_key\=${MAXMIND_TOKEN}\&suffix\=tar.gz | tar xvz; done
 # Remove version names from extracted directories for easy access by using defined names.

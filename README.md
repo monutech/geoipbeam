@@ -1,4 +1,8 @@
 # GeoipBeam #
+
+[![Docker Image CI](https://github.com/monutech/geoipbeam/actions/workflows/docker-image.yml/badge.svg)](https://github.com/monutech/geoipbeam/actions/workflows/docker-image.yml)
+
+
 Apache Beam Docker Container with the geoip2 python library and C extension pre-installed, along with the latest Maxmind City Database, allowing you to access GeoIP data effortlessly and extremely quickly due to the C extension.
 
 Using this container will allow you to quickly and easily use the python geoip2 library to perform IP -> Geolocation lookups within an apache beam pipeline, or GCP dataflow.
